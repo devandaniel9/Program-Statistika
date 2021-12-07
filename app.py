@@ -28,8 +28,8 @@ data = st.sidebar.selectbox("Sample Data:", data_list)
 if data == data_list[0]:
     tabel = [49,23,46,83,46,27,38,67,55,91]
 if data == data_list[1]:
-    np.random.seed(0)
-    x = np.random.normal(50,10,100)
+    np.random.seed(1)
+    x = np.random.normal(50,5,30)
     tabel = []
     for i in list(x):
         tabel.append(math.floor(i))
@@ -96,7 +96,7 @@ if grafik == grafik_list[2]:
 if grafik == grafik_list[3]:
     plt.pie(tabel,labels=tabel)
 if grafik == grafik_list[4]:
-    plt.hist(tabel)
+    plt.hist(tabel,bins=10)
     plt.ylabel("Banyak Data")
     plt.xlabel("Kelas")
     
