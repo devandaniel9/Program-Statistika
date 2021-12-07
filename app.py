@@ -30,7 +30,7 @@ if data == data_list[1]:
     tabel = [71,66,92,81,77,92,88,55,32,41]
 if data == data_list[2]:
     np.random.seed(123)
-    tabel = np.random.normal(10,0.5,20)
+    tabel = np.random.normal(10,1,20)
 if data == data_list[3]:
     x = int(st.sidebar.number_input("Masukkan jumlah data yang ingin dimasukkan:", value=5, min_value=0))
     tabel = []
