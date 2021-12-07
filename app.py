@@ -9,6 +9,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import pandas as pd
 from PIL import Image
+import math
 
 # Menjalankan program
 # streamlit run 'Statistika 3.py'
@@ -21,17 +22,20 @@ st.write('- Hasil statistika akan muncul otomatis di menu **Hasil**')
 
 st.sidebar.write('## **Menu Input Data**')
 
-data_list = ["Data 1", "Data 2", "Data 3", "Custom"]
+data_list = ["Data 1", "Data 2", "Custom"]
 data = st.sidebar.selectbox("Sample Data:", data_list)
 
 if data == data_list[0]:
     tabel = [49,23,46,83,46,27,38,67,55,91]
 if data == data_list[1]:
-    tabel = [71,66,92,81,77,92,88,55,32,41]
+    np.random.seed(0)
+    x = np.random.normal(50,10,100)
+    tabel = []
+    for i in list(x):
+        tabel.append(math.floor(i))
+
+
 if data == data_list[2]:
-    #np.random.seed(123)
-    tabel = np.random.normal(50,10,100)
-if data == data_list[3]:
     x = int(st.sidebar.number_input("Masukkan jumlah data yang ingin dimasukkan:", value=5, min_value=0))
     tabel = []
     for i in range(x):
@@ -58,7 +62,7 @@ st.dataframe(df)
 st.write('## **Hasil**')
 
 st.info('''
-- Jumlah Data  : {}
+- Total Data   : {}
 - Banyak Data  : {}
 - Maksimum     : {}
 - Minimum      : {}
@@ -66,7 +70,7 @@ st.info('''
 - Median       : {}
 - Mode         : {}
 
-'''.format(sum(tabel),len(tabel), max(tabel),min(tabel),statistics.mean(tabel),statistics.median(tabel),statistics.mode(tabel)))
+'''.format(sum(tabel),len(tabel), max(tabel),min(tabel),np.mean(tabel),np.median(tabel),statistics.mode(tabel)))
 
 
 
