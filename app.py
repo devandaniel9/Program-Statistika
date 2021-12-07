@@ -58,7 +58,7 @@ st.dataframe(df)
 st.write('## **Hasil**')
 
 st.info('''
-- Total Data   : {}
+- Jumlah Data  : {}
 - Banyak Data  : {}
 - Maksimum     : {}
 - Minimum      : {}
