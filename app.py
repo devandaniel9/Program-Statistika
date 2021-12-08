@@ -66,7 +66,7 @@ st.write('## **Hasil**')
 try:
   mode_output = statistics.mode(tabel)
 except statistics.StatisticsError:
-  mode_output = "There is no mode!"
+  mode_output = "Tidak ada"
 
 
 st.info('''
