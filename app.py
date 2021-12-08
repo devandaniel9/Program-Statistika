@@ -61,6 +61,14 @@ st.dataframe(df)
 
 st.write('## **Hasil**')
 
+#statistics.mode(tabel)
+
+try:
+  mode_output = statistics.mode(tabel)
+except statistics.StatisticsError:
+  mode_output = "There is no mode!"
+
+
 st.info('''
 - Total Data   : {}
 - Banyak Data  : {}
@@ -70,7 +78,7 @@ st.info('''
 - Median       : {}
 - Mode         : {}
 
-'''.format(sum(tabel),len(tabel), max(tabel),min(tabel),np.mean(tabel),np.median(tabel),statistics.mode(tabel)))
+'''.format(sum(tabel),len(tabel), max(tabel),min(tabel),np.mean(tabel),np.median(tabel),mode_output))
 
 
 
